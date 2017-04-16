@@ -1,0 +1,42 @@
+.top-row{
+    display:flex;
+}
+
+.btn{
+    margin-left: 5px;
+    padding: 0px 3px 0px 3px;
+    font-size:.7rem;
+    background-color: aliceblue;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightblue;
+}
+
+h5{
+    margin-bottom: 2px;
+}
+
+h6{
+    margin-bottom: 0;
+}
+
+@media (max-width:350px){
+    .top-row{
+        display:table-caption;
+    }
+
+    .btn{
+        margin-left: 5px;
+        padding: 0px 5px 0px 5px;
+        font-size: 1rem;
+        background-color: aliceblue;
+        border-style: solid;
+        border-width: 1px;
+        border-color: lightblue;
+        width: 85px;
+    }
+
+    h5, h6{
+        display:  none;
+    }
+}
