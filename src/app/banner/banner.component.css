@@ -10,13 +10,17 @@
     border-style: solid;
     border-width: 1px;
     border-color: lightblue;
+    color: #4b4b4b;
+    font-weight: bold;
 }
 
 h5{
+    color: #4b4b4b;
     margin-bottom: 2px;
 }
 
 h6{
+    color: #80888a;
     margin-bottom: 0;
 }
 
@@ -26,13 +30,8 @@ h6{
     }
 
     .btn{
-        margin-left: 5px;
         padding: 0px 5px 0px 5px;
         font-size: 1rem;
-        background-color: aliceblue;
-        border-style: solid;
-        border-width: 1px;
-        border-color: lightblue;
         width: 85px;
     }
 
