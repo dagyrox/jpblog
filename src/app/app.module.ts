@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+//import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -12,6 +13,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { ContentComponent } from './content/content.component';
 import { ContentService } from './content/content.service';
 import { PostComponent } from './post/post.component';
+import { ContactModalComponent } from './contact-modal/contact-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,17 +23,19 @@ import { PostComponent } from './post/post.component';
     NavBarComponent,
     SideBarComponent,
     ContentComponent,
-    PostComponent
+    PostComponent,
+    ContactModalComponent
   ],
   imports: [
     BrowserModule,
-    BsDropdownModule.forRoot(),
+    NgbModule.forRoot(),
     FormsModule,
     HttpModule
   ],
   providers: [
     ContentService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ContactModalComponent]
 })
 export class AppModule { }

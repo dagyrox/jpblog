@@ -1,14 +1,11 @@
-.container{
+.form-horizontalx{
     display: flex;
     flex-direction: row;     /* make main axis horizontal (default setting) */
     justify-content: center; /* center items horizontally, in this case */
     align-items: center;
 }
 
-img{
-    height: 40px;
-}
-
-.bg-faded{
-    background-color: #EAEAEA;
+.network-name
+{
+    font-size:8px;
 }

@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4 class="modal-title">Contact Jason Politis</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+</div>
+<div class="modal-body">
+  <div class="form-horizontal">
+    <div class="form-group">
+      <a class="col-md-6" href="tel:727.919.4009"><span class="fa fa-phone"> 727.919.4009</span></a>
+      <a class="col-md-6" href="mailto:jppolitis@gmail.com"><span class="fa fa-envelope"> jppolitis@gmail.com</span></a>
+    </div>
+    <div class="form-group">
+      <a class="btn btn-default btn-lg col-md-2" target="_blank" href="https://www.linkedin.com/in/jasonpolitis"><i class="fa fa-linkedin fa-fw"></i><div class="network-name">LinkedIn</div></a>
+      <a class="btn btn-default btn-lg col-md-2" target="_blank" href="https://twitter.com/dagyrox"><i class="fa fa-twitter fa-fw"></i><div class="network-name">Twitter</div></a>
+      <a class="btn btn-default btn-lg col-md-2" target="_blank" href="https://github.com/dagyrox"><i class="fa fa-github fa-fw"></i><div class="network-name">GitHub</div></a>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activeModal.close('Close click')">Close</button>
+</div>
