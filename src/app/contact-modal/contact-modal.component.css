@@ -1,3 +1,8 @@
+:host{
+    /*background-color: #7A7A7A;*/
+    background-color: #EAEAEA;
+}
+
 .form-horizontalx{
     display: flex;
     flex-direction: row;     /* make main axis horizontal (default setting) */
@@ -8,4 +13,24 @@
 .network-name
 {
     font-size:8px;
+}
+
+.btn{
+    border-color: lightblue;
+    width:80px;
+}
+.btn:hover{
+    background-color:aliceblue
+}
+
+.modal-header, .modal-footer{
+    background-color: #EAEAEA;
+}
+
+a{
+    color: #4b4b4b;
+}
+
+button:hover{
+background-color:lightblue;
 }

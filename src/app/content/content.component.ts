@@ -15,6 +15,8 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     this.posts = this.ContentService.getPosts();
+    this.ContentService.getComments().subscribe(posts => {console.log(JSON.stringify(posts));},
+    err=>{console.log('Error: ' + err);});
   }
 
 }
