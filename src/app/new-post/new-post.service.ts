@@ -8,16 +8,20 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class ContentService {
+export class NewPostService {
 
   constructor(private Http: Http) { }
 
-  getPosts(): Observable<any[]> {
-    let bodyString = JSON.stringify({'id': 1}); // Stringify payload
+  post(post: any): Observable<any[]>{
+    post.author = 'Jason Politis';
+    post.date = Date.now().toString();
+    post.comments = [];
+    
+    let bodyString = JSON.stringify(post); // Stringify payload
     let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     let options = new RequestOptions({ headers: headers }); // Create a request option
 
-    return this.Http.post('http://localhost:3000/posts', bodyString, options)
+    return this.Http.post('http://localhost:3000/newPost', bodyString, options)
       .map(this.extractData)
       .catch(this.handleError);
   }

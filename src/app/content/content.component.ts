@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import{ ContentService } from './content.service';
+import { ContentService } from './content.service';
 
 @Component({
   selector: 'jp-content',
@@ -8,15 +8,18 @@ import{ ContentService } from './content.service';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  posts = [];
+  posts: Array<any>;
   constructor(
     private ContentService: ContentService
   ) { }
 
   ngOnInit() {
-    this.posts = this.ContentService.getPosts();
-    this.ContentService.getComments().subscribe(posts => {console.log(JSON.stringify(posts));},
-    err=>{console.log('Error: ' + err);});
+    this.ContentService.getPosts().subscribe(
+      (_posts) => {
+        this.posts = _posts;
+        console.log(_posts);
+      },
+      err => console.log('Error: ' + JSON.stringify(err))
+    );
   }
-
 }

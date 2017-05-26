@@ -14,6 +14,8 @@ import { ContentComponent } from './content/content.component';
 import { ContentService } from './content/content.service';
 import { PostComponent } from './post/post.component';
 import { ContactModalComponent } from './contact-modal/contact-modal.component';
+import { NewPostComponent } from './new-post/new-post.component';
+import { NewPostService } from './new-post/new-post.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ContactModalComponent } from './contact-modal/contact-modal.component';
     SideBarComponent,
     ContentComponent,
     PostComponent,
-    ContactModalComponent
+    ContactModalComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { ContactModalComponent } from './contact-modal/contact-modal.component';
     HttpModule
   ],
   providers: [
-    ContentService
+    ContentService,
+    NewPostService
   ],
   bootstrap: [AppComponent],
   entryComponents: [ContactModalComponent]
