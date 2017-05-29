@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { PostService } from './post.service';
+import { ContentService } from '../content/content.service';
 
 @Component({
   selector: 'jp-post',
@@ -15,14 +16,25 @@ export class PostComponent implements OnInit {
   author: string;
   comments: Array<any>;
   content: string;
-  
-  constructor(private PostService: PostService) { }
+
+  constructor(
+    private ContentService: ContentService,
+    private PostService: PostService
+  ) { }
 
   ngOnInit() {
     this.post = this.post || {};
   }
 
-  deletePost(id:string){
-    this.PostService.deletePost(id);
+  deletePost(id: string) {
+    this.PostService.deletePost(id).subscribe(
+      (res: Response) => {
+        console.log(res);
+        this.ContentService.refreshData();
+      },
+      (err: any) => {
+        console.log(err);
+      }
+    );
   }
 }

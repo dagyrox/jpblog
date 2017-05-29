@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NewPostService } from './new-post.service';
+import { ContentService } from '../content/content.service';
 
 @Component({
   selector: 'jp-new-post',
@@ -11,6 +12,7 @@ export class NewPostComponent implements OnInit {
   post: any;
 
   constructor(
+    private ContentService: ContentService,
     private NewPostService: NewPostService
   ) { }
 
@@ -21,7 +23,8 @@ export class NewPostComponent implements OnInit {
   submit() {
     this.NewPostService.post(this.post).subscribe(
       (_res)=>{
-        console.log(_res);
+        this.ContentService.refreshData();
+        console.log('New post created');
       },
       err=>console.log('Error: ' + JSON.stringify(err))
     );

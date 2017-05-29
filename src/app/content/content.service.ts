@@ -24,25 +24,9 @@ export class ContentService {
   refreshData() {
     this.getPostsSubscription = this.getAllPosts().subscribe(
       (_posts) => {
-        this.posts = _posts;
-        this.subscribeToPosts();
-      }
+        this.posts = _posts;      }
     )
   }
-
-  subscribeToPosts() {
-    this.timerSubscription = Observable.timer(500000).first().subscribe(
-      () => {
-        this.refreshData();
-      });
-  }
-
-
-
-
-
-
-
 
   private extractData(res: any) {
     return JSON.parse(res._body) || '';
