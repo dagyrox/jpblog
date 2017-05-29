@@ -1,3 +1,9 @@
-<h5>{{post.title}}</h5>
-<span>{{post.date | date: "MM-dd-yyyy"}} by {{post.author}} - {{post.comments ? post.comments.length : 0}} Comment{{post.comments ? (post.comments.length === 1 ? '' : 's') : 's'}}</span>
-<p>{{post.content}}</p>
+<div>
+    <h5>
+        <input type="checkbox" [(ngModel)]="select">
+        <span>{{post.title}}</span>
+        <button class="btn btn-default pull-right" (click)="deletePost(post._id)">delete</button>
+    </h5>
+    <span>{{post.date | date: "MM-dd-yyyy"}} by {{post.author}} - {{post.comments ? post.comments.length : 0}} Comment{{post.comments ? (post.comments.length === 1 ? '' : 's') : 's'}}</span>
+    <p style="white-space: pre-wrap">{{post.content}}</p>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { PostService } from './post.service';
+
 @Component({
   selector: 'jp-post',
   templateUrl: './post.component.html',
@@ -14,10 +16,13 @@ export class PostComponent implements OnInit {
   comments: Array<any>;
   content: string;
   
-  constructor() { }
+  constructor(private PostService: PostService) { }
 
   ngOnInit() {
     this.post = this.post || {};
   }
 
+  deletePost(id:string){
+    this.PostService.deletePost(id);
+  }
 }

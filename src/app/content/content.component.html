@@ -1,4 +1,4 @@
 <div class="blog-main">
   <jp-new-post></jp-new-post>
-  <jp-post *ngFor="let post of posts" class="blog-post" [post]="post"></jp-post>
+  <jp-post *ngFor="let post of ContentService.posts" class="blog-post" [post]="post"></jp-post>
 </div>

@@ -9,18 +9,40 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class ContentService {
+  getPostsSubscription: any;
+  posts: Array<any>;
+  timerSubscription: any;
 
   constructor(private Http: Http) { }
 
-  getPosts(): Observable<any[]> {
-    let bodyString = JSON.stringify({'id': 1}); // Stringify payload
-    let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
-    let options = new RequestOptions({ headers: headers }); // Create a request option
-
-    return this.Http.post('http://localhost:3000/posts', bodyString, options)
+  getAllPosts(): Observable<any[]> {
+    return this.Http.get('http://localhost:3000/api/jpblog/987')
       .map(this.extractData)
       .catch(this.handleError);
   }
+
+  refreshData() {
+    this.getPostsSubscription = this.getAllPosts().subscribe(
+      (_posts) => {
+        this.posts = _posts;
+        this.subscribeToPosts();
+      }
+    )
+  }
+
+  subscribeToPosts() {
+    this.timerSubscription = Observable.timer(500000).first().subscribe(
+      () => {
+        this.refreshData();
+      });
+  }
+
+
+
+
+
+
+
 
   private extractData(res: any) {
     return JSON.parse(res._body) || '';

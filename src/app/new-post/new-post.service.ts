@@ -21,7 +21,7 @@ export class NewPostService {
     let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     let options = new RequestOptions({ headers: headers }); // Create a request option
 
-    return this.Http.post('http://localhost:3000/newPost', bodyString, options)
+    return this.Http.post('http://localhost:3000/api/jpblog/create', bodyString, options)
       .map(this.extractData)
       .catch(this.handleError);
   }

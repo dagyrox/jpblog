@@ -13,6 +13,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { ContentComponent } from './content/content.component';
 import { ContentService } from './content/content.service';
 import { PostComponent } from './post/post.component';
+import { PostService } from './post/post.service';
 import { ContactModalComponent } from './contact-modal/contact-modal.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { NewPostService } from './new-post/new-post.service';
@@ -37,7 +38,8 @@ import { NewPostService } from './new-post/new-post.service';
   ],
   providers: [
     ContentService,
-    NewPostService
+    NewPostService,
+    PostService
   ],
   bootstrap: [AppComponent],
   entryComponents: [ContactModalComponent]
